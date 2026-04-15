@@ -4,5 +4,4 @@ print(numeros[2:5])
 print(numeros.count(1))
 lista = list(numeros)
 print(lista)
-
 print(numeros)

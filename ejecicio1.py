@@ -1,4 +1,4 @@
-provincias = ["Buenos Aires", "Córdoba", "Santa Fe", "Mendoza", "Salta", "Chubut"]
+provincias = ["Buenos Aires", "Córdoba", "Santa Fe", "Mendoza", "Salta", "Chubut", "Santa Cruz"]
 
 print(provincias[:4])
 

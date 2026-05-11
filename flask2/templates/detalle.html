@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block title %}Detalle del estudiante{% endblock %}
+
+{% block content %}
+<section class="card">
+
+    {% if estudiante %}
+        <h1>{{ estudiante.nombre }}</h1>
+
+        <p><strong>Edad:</strong> {{ estudiante.edad }}</p>
+        <p><strong>Carrera:</strong> {{ estudiante.carrera }}</p>
+        <p><strong>Estado:</strong> {{ estudiante.estado }}</p>
+
+        {% if estudiante.estado == "Activo" %}
+            <p class="mensaje-ok">
+                Este estudiante se encuentra activo en la carrera.
+            </p>
+        {% else %}
+            <p class="mensaje-alerta">
+                Este estudiante no se encuentra activo actualmente.
+            </p>
+        {% endif %}
+
+    {% else %}
+        <h1>Estudiante no encontrado</h1>
+        <p>No existe un estudiante con ese ID.</p>
+    {% endif %}
+
+    <a href="/estudiantes" class="boton">Volver al listado</a>
+
+</section>
+{% endblock %}

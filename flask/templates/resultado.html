@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Estudiante registrado</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/estilos.css') }}">
+</head>
+<body>
+
+    <main class="contenedor">
+
+        <section class="encabezado">
+            <span class="etiqueta">Registro exitoso</span>
+            <h1>Estudiante registrado</h1>
+            <p>
+                Los datos enviados desde el formulario fueron procesados por Flask
+                y mostrados usando una plantilla HTML con Jinja2.
+            </p>
+        </section>
+
+        <section class="card resultado">
+            <h2>Datos recibidos</h2>
+
+            <div class="dato">
+                <strong>Nombre completo:</strong>
+                <span>{{ nombre }} {{ apellido }}</span>
+            </div>
+
+            <div class="dato">
+                <strong>Edad:</strong>
+                <span>{{ edad }} años</span>
+            </div>
+
+            <div class="dato">
+                <strong>Email:</strong>
+                <span>{{ email }}</span>
+            </div>
+
+            <div class="dato">
+                <strong>Carrera:</strong>
+                <span>{{ carrera }}</span>
+            </div>
+
+            <a href="/" class="boton-volver">Registrar otro estudiante</a>
+        </section>
+
+    </main>
+
+</body>
+</html>

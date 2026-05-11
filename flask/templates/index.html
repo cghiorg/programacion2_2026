@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Registro de Estudiantes</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/estilos.css') }}">
+</head>
+<body>
+
+    <main class="contenedor">
+
+        <section class="encabezado">
+            <span class="etiqueta">Programación II</span>
+            <h1>Registro de Estudiantes</h1>
+            <p>
+                Esta pequeña aplicación muestra cómo Flask puede recibir datos
+                desde un formulario HTML y luego mostrarlos dinámicamente.
+            </p>
+        </section>
+
+        {% if error %}
+            <div class="alerta">
+                {{ error }}
+            </div>
+        {% endif %}
+
+        <section class="card">
+            <form action="/registrar" method="POST" class="formulario">
+
+                <div class="grupo">
+                    <label for="nombre">Nombre</label>
+                    <input 
+                        type="text" 
+                        id="nombre" 
+                        name="nombre" 
+                        placeholder="Ejemplo: Ana"
+                        required
+                    >
+                </div>
+
+                <div class="grupo">
+                    <label for="apellido">Apellido</label>
+                    <input 
+                        type="text" 
+                        id="apellido" 
+                        name="apellido" 
+                        placeholder="Ejemplo: Pérez"
+                        required
+                    >
+                </div>
+
+                <div class="grupo">
+                    <label for="edad">Edad</label>
+                    <input 
+                        type="number" 
+                        id="edad" 
+                        name="edad" 
+                        placeholder="Ejemplo: 21"
+                        min="16"
+                        max="99"
+                        required
+                    >
+                </div>
+
+                <div class="grupo">
+                    <label for="email">Correo electrónico</label>
+                    <input 
+                        type="email" 
+                        id="email" 
+                        name="email" 
+                        placeholder="ejemplo@correo.com"
+                        required
+                    >
+                </div>
+
+                <div class="grupo">
+                    <label for="carrera">Carrera</label>
+                    <select id="carrera" name="carrera" required>
+                        <option value="">Seleccionar carrera</option>
+                        <option value="Tecnicatura en Ciencia de Datos e Inteligencia Artificial">
+                            Tecnicatura en Ciencia de Datos e Inteligencia Artificial
+                        </option>
+                        <option value="Desarrollo Web">
+                            Desarrollo Web
+                        </option>
+                        <option value="Programación">
+                            Programación
+                        </option>
+                    </select>
+                </div>
+
+                <button type="submit">Registrar estudiante</button>
+
+            </form>
+        </section>
+
+    </main>
+
+</body>
+</html>

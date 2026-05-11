@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<style>
+body {
+    font-family: Arial;
+}
+
+input {
+    padding: 10px;
+    margin: 5px;
+}
+
+button {
+    background-color: green;
+    color: white;
+    padding: 10px;
+}
+</style>
+    <head>
+        <title>Mi página Web</title>
+    </head>
+    <body>
+    <p id="texto">Texto original</p>
+
+    <button onclick="cambiar()">Cambiar</button>
+
+        
+        <h1>Hola mundo, bienvenidos!</h1>
+        <h2>Hola mundo, bienvenidos!</h2>
+        <h3>Hola mundo, bienvenidos!</h3>
+        <p>Esto es un párrafo</p>
+        <a href="prueba.html">vamos a prueba</a>
+
+        <button onclick="saludar()">Click</button>
+    </body>
+
+<script>
+    function saludar() {
+        alert("Hola!");
+    }
+
+    function cambiar() {
+        document.getElementById("texto").innerText = "Nuevo texto";
+    }
+</script>
+
+
+</html>

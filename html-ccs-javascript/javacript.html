@@ -1,0 +1,22 @@
+<input type="text" id="nombre" placeholder="Nombre">
+
+<button onclick="saludar()">Saludar</button>
+
+<p id="mensaje"></p>
+
+<script>
+function saludar() {
+    let nombre = document.getElementById("nombre").value;
+
+    if (nombre === "") {
+        alert("Ingresar nombre");
+        return;
+    }
+
+    let mensaje = "Bienvenido " + nombre;
+
+    let salida = document.getElementById("mensaje");
+    salida.innerText = mensaje;
+    salida.style.color = "blue";
+}
+</script>

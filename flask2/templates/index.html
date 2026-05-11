@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}Inicio{% endblock %}
+
+{% block content %}
+<section class="card">
+    <h1>Bienvenidos a la app Flask</h1>
+
+    <p>
+        Esta aplicación sirve para entender cómo Flask envía datos desde Python
+        hacia una plantilla HTML utilizando Jinja2.
+    </p>
+
+    <p>
+        En este ejemplo vamos a trabajar con una lista de estudiantes simulada.
+    </p>
+
+    <a href="/estudiantes" class="boton">Ver estudiantes</a>
+</section>
+{% endblock %}

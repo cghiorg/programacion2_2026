@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block title %}Estudiantes{% endblock %}
+
+{% block content %}
+<section class="card">
+    <h1>Listado de estudiantes</h1>
+
+    {% if estudiantes %}
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Edad</th>
+                    <th>Carrera</th>
+                    <th>Estado</th>
+                    <th>Detalle</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for estudiante in estudiantes %}
+                <tr>
+                    <td>{{ estudiante.nombre }}</td>
+                    <td>{{ estudiante.edad }}</td>
+                    <td>{{ estudiante.carrera }}</td>
+
+                    <td>
+                        {% if estudiante.estado == "Activo" %}
+                            <span class="activo">Activo</span>
+                        {% else %}
+                            <span class="inactivo">Inactivo</span>
+                        {% endif %}
+                    </td>
+
+                    <td>
+                        <a href="/estudiante/{{ estudiante.id }}" class="link">
+                            Ver detalle
+                        </a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>No hay estudiantes cargados.</p>
+    {% endif %}
+</section>
+{% endblock %}

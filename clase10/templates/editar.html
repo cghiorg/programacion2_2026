@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block contenido %}
+
+<h2>Editar proyecto</h2>
+
+<form method="POST">
+    <label>Título:</label>
+    <input type="text" name="titulo" value="{{ proyecto.titulo }}" required>
+
+    <label>Descripción:</label>
+    <textarea name="descripcion" required>{{ proyecto.descripcion }}</textarea>
+
+    <label>Área:</label>
+    <input type="text" name="area" value="{{ proyecto.area }}" required>
+
+    <label>Estado:</label>
+    <select name="estado" required>
+        <option value="Planificado" {% if proyecto.estado == 'Planificado' %}selected{% endif %}>Planificado</option>
+        <option value="En desarrollo" {% if proyecto.estado == 'En desarrollo' %}selected{% endif %}>En desarrollo</option>
+        <option value="Finalizado" {% if proyecto.estado == 'Finalizado' %}selected{% endif %}>Finalizado</option>
+    </select>
+
+    <label>Cantidad de integrantes:</label>
+    <input type="number" name="integrantes" value="{{ proyecto.integrantes }}" required>
+
+    <button type="submit">Actualizar</button>
+</form>
+
+{% endblock %}

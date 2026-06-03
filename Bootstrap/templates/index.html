@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="row align-items-center">
+    <div class="col-12 col-md-6">
+        <h1 class="mb-4">Bienvenidos a mi aplicación Flask</h1>
+
+        <p class="lead">
+            Esta aplicación muestra cómo usar Bootstrap para mejorar el diseño visual
+            de un proyecto desarrollado con Flask.
+        </p>
+
+        <a href="/productos" class="btn btn-primary btn-lg">
+            Ver productos
+        </a>
+    </div>
+
+    <div class="col-12 col-md-6 mt-4 mt-md-0">
+        <div class="card shadow">
+            <div class="card-body">
+                <h5 class="card-title">¿Qué usamos?</h5>
+                <p class="card-text">
+                    En este ejemplo usamos Flask, templates HTML, herencia de plantillas
+                    y componentes visuales de Bootstrap.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

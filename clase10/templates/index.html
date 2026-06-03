@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block contenido %}
+
+<h2>Listado de proyectos</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Título</th>
+            <th>Área</th>
+            <th>Estado</th>
+            <th>Integrantes</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        {% for proyecto in proyectos %}
+        <tr>
+            <td>{{ proyecto.titulo }}</td>
+            <td>{{ proyecto.area }}</td>
+            <td>{{ proyecto.estado }}</td>
+            <td>{{ proyecto.integrantes }}</td>
+            <td>
+                <a href="{{ url_for('editar', id=proyecto.id) }}">Editar</a>
+                <a href="{{ url_for('eliminar', id=proyecto.id) }}">Eliminar</a>
+            </td>
+        </tr>
+        {% else %}
+        <tr>
+            <td colspan="5">No hay proyectos cargados.</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}

@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+
+{% block contenido %}
+
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <h2>Listado de productos</h2>
+
+    <a href="{{ url_for('crear_producto') }}" class="btn btn-success">
+        Nuevo producto
+    </a>
+</div>
+
+<table class="table table-bordered table-striped shadow">
+    <thead class="table-dark">
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Descripción</th>
+            <th>Precio</th>
+            <th>Stock</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        {% for producto in productos %}
+        <tr>
+            <td>{{ producto.id }}</td>
+            <td>{{ producto.nombre }}</td>
+            <td>{{ producto.descripcion }}</td>
+            <td>${{ producto.precio }}</td>
+            <td>{{ producto.stock }}</td>
+
+            <td>
+                <a 
+                    href="{{ url_for('editar_producto', id=producto.id) }}" 
+                    class="btn btn-warning btn-sm">
+                    Editar
+                </a>
+
+                <form 
+                    action="{{ url_for('eliminar_producto', id=producto.id) }}" 
+                    method="POST" 
+                    style="display:inline;">
+                    
+                    <button 
+                        type="submit" 
+                        class="btn btn-danger btn-sm"
+                        onclick="return confirm('¿Seguro que desea eliminar este producto?')">
+                        Eliminar
+                    </button>
+
+                </form>
+            </td>
+        </tr>
+        {% else %}
+        <tr>
+            <td colspan="6" class="text-center">
+                No hay productos cargados.
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}

@@ -20,7 +20,6 @@ persona2 = Persona("Juan", 40)
 
 persona1.saludar()
 
-
 persona3 = Persona("Carlos", 55)
 
 persona3.saludar()
